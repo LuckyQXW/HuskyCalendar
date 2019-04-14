@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<HTML>
+	<style>
+    ::-webkit-scrollbar {
+  		width: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+  		background: #4b2e83;
+		}
+    ::-webkit-scrollbar-track {
+  		background: #85754d;
+		}
+
+    #myForm {
+        display: none;
+    }
+
+    #entered_class li {
+      width: 90%;
+      height: 100px;
+      background-color: #4b2e83;
+      border-style:solid;
+      border-radius: 15px;
+      border-color: #4b2e83;
+      margin: 10px 0px 10px 0px;
+      text-align:center;
+      list-style-type: none;
+      color: white;
+      font-size: 25px;
+    }
+
+    ul{
+      border-radius: 10px;
+      background-color: #e8e3d3;
+      height: 600px;
+      overflow-y: scroll;
+      padding-left: 20px;
+    }
+
+    #topOfWeb {
+        height: 40px;
+        width: 100%;
+        font-size: 36px;
+        font-weight: bolder;
+        text-align: center;
+        display: inline-block;
+    }
+
+    .purple {
+        color:white;
+        background-color: #4b2e83;
+    }
+
+    #calender_header{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    	text-align: center;
+    }
+    .inner {
+      display: inline-block;
+    }
+
+    table {
+			width: 100%;
+			justify-content: space-evenly;
+      border-style: solid;
+			border-color: black;
+			border-radius: 10px;
+		}
+
+		main {
+			display: flex;
+		}
+
+		#side-bar {
+			width: 20%;
+		}
+
+		#calendar {
+			width: 80%;
+			margin-left: 20px;
+		}
+
+    th {
+      width: 100px;
+    }
+
+    .CSE143{
+      background-color: #88AAFF;
+      border-radius: 10px;
+    }
+
+    .PHIL100{
+        background-color: #f44b42;
+        border-radius: 10px;
+    }
+
+    .HCDE298{
+      background-color: #ffe542;
+      border-radius: 10px;
+    }
+	</style>
+  <head>
+
+  </head>
+	<body>
+    <header>
+    	<div id="topOfWeb">
+    		<div class="purple">Husky Calendar</div>
+    	</div>
+  	</header>
+    <main>
+			<section id="side-bar">
+				<div id="main">
+	          <button id="open" onclick="openForm()">Create Event</button>
+	      </div>
+	      <div id="myForm">
+	          <form class="form-container" onsubmit="return false;">
+	              <p>
+	                  <label for="event">Event: </label>
+	                  <input type="eventTitle" placeholder="Enter event" required>
+	              </p>
+	              <p>
+	                  <label for="start">Start Time: </label>
+	                  <input type="startTime" placeholder="Enter start time" required>
+	              </p>
+	              <p>
+	                  <label for="end">End Time: </label>
+	                  <input type="endTime" placeholder="Enter end time" required>
+	              </p>
+	              <p>
+	                  <button id="close" onclick="closeForm()">Finish</button>
+	              </p>
+	          </form>
+	      </div>
+				<class id="class_events">
+					<ul id="entered_class">
+						<li id="input_class">Enter your class<input id="user_input" type="text" value=""><br><button id = "ok">Ok</button></li>
+					</ul>
+				</class>
+			</section>
+			<section id='calendar'>
+	      <div id="calender_header">
+	        <div class="inner"><button onclick="goBack()"> Back </button></div>
+	        <div class="inner"><h2 id="weeks"> Week 1 </h2></div>
+	        <div class="inner"><button onclick="goForward()"> Forward </button></div>
+	      </div>
+				<table>
+					<tbody>
+            <tr>
+              <th class="">Time</th>
+	            <th class="daytd">Sun</th>
+	            <th class="daytd">Mon</th>
+	            <th class="daytd">Tue</th>
+	            <th class="daytd">Wed</th>
+	            <th class="daytd">Thu</th>
+							<th class="daytd">Fri</th>
+							<th class="daytd">Sat</th>
+            </tr>
+              <tr>
+                  <th class="">8:30</th>
+
+              </tr>
+              <tr>
+                  <th class="">9:30</th>
+                	<th class=""></th>
+                	<th class="PHIL100">PHIL 100 9:30 - 10:30 Lecture KNE 220 </th>
+                	<th class="PHIL100">PHIL 100 9:30 - 10:30 Quiz SAV 155</th>
+                	<th class="PHIL100">PHIL 100 9:30 - 10:30 Lecture KNE 220 </th>
+                	<th class="PHIL100">PHIL 100 9:30 - 10:30 Quiz SAV 155</th>
+                	<th class="PHIL100">PHIL 100 9:30 - 10:30 Lecture KNE 220 </th>
+              </tr>
+              <tr>
+                  <th class="">10:30</th>
+              </tr>
+              <tr>
+                  <th class="">11:30</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th class="HCDE298">HCDE 298 11:30 - 2:30 Lecture NAN 181</th>
+              </tr>
+              <tr>
+                  <th class="">12:30</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th class="HCDE298"></th>
+              </tr>
+              <tr>
+                  <th class="">13:30</th>
+                	<th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th class="HCDE298"></th>
+              </tr>
+              <tr>
+                <th class="">14:30</th>
+              	<th></th>
+              	<th class="CSE143">CSE 143 2:30-3:30 Lecture GUG 220</th>
+              	<th class="CSE143">CSE 143 2:30-3:30 Quiz THO 331</th>
+                <th class="CSE143">CSE 143 2:30-3:30 Lecture GUG 220</th>
+                <th class="CSE143">CSE 143 2:30-3:30 Quiz THO 331</th>
+                <th class="CSE143">CSE 143 2:30-3:30 Lecture GUG 220</th>
+              </tr>
+              <tr>
+                  <th class="">15:30</th>
+              </tr>
+              <tr>
+                  <th class="">16:30</th>
+              </tr>
+              <tr>
+                  <th class="">17:30</th>
+              </tr>
+              <tr>
+                  <th class="">18:30</th>
+              </tr>
+              <tr>
+                  <th class="">19:30</th>
+              </tr>
+					</tbody>
+				</table>
+			</section>
+
+    </main>
+  </body>
+</HTML>
+
+<script>
+  var numWeeks = 1;
+  function goBack() {
+    if (numWeeks > 1) {
+      numWeeks--;
+    }
+    document.getElementById("weeks").innerHTML = "Week " + numWeeks;
+  }
+
+  function goForward() {
+    if (numWeeks < 10) {
+      numWeeks++;
+    }
+    document.getElementById("weeks").innerHTML = "Week " + numWeeks;
+  }
+
+  function addClass() {
+    var existVar = document.getElementById(document.getElementById("user_input").value);
+    if(existVar === null){
+      var name_class = document.createTextNode(document.getElementById("user_input").value + " ");
+      var list = document.createElement("LI");
+      var button = document.createElement("BUTTON");
+      button.setAttribute("id", document.getElementById("user_input").value);
+      button.innerHTML = "delete";
+      button.setAttribute("class", "name_of_class");
+      list.appendChild(name_class);
+      list.appendChild(button);
+      document.getElementById("entered_class").appendChild(list);
+      document.getElementById(document.getElementById("user_input").value).onclick = function deleteClass() {
+      document.getElementById("entered_class").removeChild(list);
+      }
+    }
+    else{
+      alert("You already have this class made!");
+    }
+	}
+
+		window.onload = function() {
+    	document.getElementById("ok").onclick = function makeClass() {
+
+        if(document.getElementById("user_input").value == ""){
+				alert("Enter Something");
+        }else{
+          addClass();
+        }
+    	}
+    }
+
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+        document.getElementById("open").style.display = "none";
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+        document.getElementById("open").style.display = "block";
+    }
+
+</script>
